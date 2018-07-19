@@ -1,0 +1,231 @@
+ /* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    /*background-color: #333;  Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+/*    left: 50%;  Center the snackbar 
+    bottom: 30px;  30px from the bottom */
+}
+/*ALERT COLOR CLASSES*/
+.simple-alert{
+    background-color: #333; /* Black background color */
+}
+.success-alert{
+    background-color: #10a70c;
+    
+}
+.failure-alert{
+    background-color: #f0450e;
+}
+.danger-alert{
+    background-color: #f20b0b;
+}
+.primary-alert{
+    background-color: #f20b0b;
+}
+
+/*ALERT POSITIONING CLASSES*/
+.default-position{
+    bottom: 10%;
+}
+.vertical-center-position{
+    bottom:50%;
+}
+.top-position{
+    bottom:90%;
+}
+
+/*ALIGNMENT CLASSES*/
+.left-position{
+    left:15%;
+}
+.right-position{
+    right:15%;
+}
+.horizontal-center-position{
+    left:50%;
+}
+
+.top-left{
+    top:10%;
+    left:10%;
+    -webkit-animation: fadeinToptoTop 0.8s;
+    animation: fadeinToptoTop 0.8s;
+}
+.top-center{
+    top:10%;
+    left:50%;
+    -webkit-animation: fadeinToptoTop 0.5s;
+    animation: fadeinToptoTop 0.5s;
+}
+.top-right{
+    top:10%;
+    right:15%;
+    -webkit-animation: fadeinToptoTop 0.5s;
+    animation: fadeinToptoTop 0.5s;
+}
+
+.center-left{
+    bottom:50%;
+    left:10%;
+    -webkit-animation: fadeinLeftToRight 0.5s;
+    animation: fadeinLeftToRight 0.5s;
+}
+.center-center{
+    top:50%;
+    left:50%;
+    -webkit-animation: fadeinCenterToCenter 0.5s ;
+    animation: fadeinCenterToCenter 0.5s;
+}
+.center-right{
+    bottom: 50%;
+    right:10%;
+    -webkit-animation: fadeinRightToLeft 0.5s;
+    animation: fadeinRightToLeft 0.5s;
+}
+
+.bottom-left{
+    left:10%;
+    bottom: 10%;
+    -webkit-animation: fadeinBottomToTop 0.5s;
+    animation: fadeinBottomToTop 0.5s;
+}
+.bottom-center{
+    left:50%;
+    bottom: 10%;
+    -webkit-animation: fadeinBottomToTop 0.5s;
+    animation: fadeinBottomToTop 0.5s;
+}
+.bottom-right{
+    right:10%;
+    bottom: 10%;
+    -webkit-animation: fadeinBottomToTop 0.5s;
+    animation: fadeinBottomToTop 0.5s;
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+/*    -webkit-animation: fadeinBottomToTop 0.5s;
+    animation: fadeinBottomToTop 0.5s;*/
+}
+
+#snackbar.dismiss{
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 2s linear forwards;
+}
+/* Fade In Animation */
+@-webkit-keyframes fadeinBottomToTop {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 10%; opacity: 1;}
+}
+
+@keyframes fadeinBottomToTop {
+    from {bottom: 0%; opacity: 0;}
+    to {bottom: 10%; opacity: 1;}
+}
+
+@-webkit-keyframes fadeinToptoTop {
+    from {top: 0%; opacity: 0;}
+    to {top: 10%; opacity: 1;}
+}
+
+@keyframes fadeinToptoTop {
+    from {top: 0%; opacity: 0;}
+    to {top: 10%; opacity: 1;}
+}
+
+@-webkit-keyframes fadeinLeftToRight {
+    from {left: 0%; opacity: 0;}
+    to {left: 10%; opacity: 1;}
+}
+
+@keyframes fadeinLeftToRight {
+    from {left: 0%; opacity: 0;}
+    to {left: 10%; opacity: 1;}
+}
+@-webkit-keyframes fadeinRightToLeft {
+    from {right: 0%; opacity: 0;}
+    to {right: 10%; opacity: 1;}
+}
+
+@keyframes fadeinRightToLeft {
+    from {right: 0; opacity: 0;}
+    to {right: 10%; opacity: 1;}
+}
+@-webkit-keyframes fadeinCenterToCenter {
+    from {top: 40%; opacity: 0;}
+    to {top: 50%; opacity: 1;}
+}
+
+@keyframes fadeinCenterToCenter {
+    from {top: 40%; opacity: 0;}
+    to {top: 50%; opacity: 1;}
+}
+
+/* Fade Out animations*/
+@-webkit-keyframes fadeoutBottomToDown {
+    from {bottom: 10%; opacity: 1;}
+    to {bottom: 0%; opacity: 0;}
+}
+
+@keyframes fadeoutBottomToDown {
+    from {bottom: 10%; opacity: 1;}
+    to {bottom: 0%; opacity: 0;}
+}
+
+
+@-webkit-keyframes fadeoutBottomToTop {
+    from {bottom: 10%; opacity: 1;}
+    to {top: 0%; opacity: 0;}
+}
+
+@keyframes fadeoutBottomToTop {
+    from {bottom: 10%; opacity: 1;}
+    to {top: 0%; opacity: 0;}
+} 
+
+@-webkit-keyframes fadeoutLeftToRight {
+    from {left: 10%; opacity: 1;}
+    to {left: 0%; opacity: 0;}
+}
+
+@keyframes fadeoutLeftToRight {
+    from {left: 10%; opacity: 1;}
+    to {left: 0%; opacity: 0;}
+}
+
+@-webkit-keyframes fadeoutRightToLeft {
+    from {right: 10%; opacity: 1;}
+    to {right: 0%; opacity: 0;}
+}
+
+@keyframes fadeoutRightToLeft {
+    from {right: 10%; opacity: 1;}
+    to {right: 0%; opacity: 0;}
+}
+
+
+.right-floater-close{
+    float:right;
+    cursor: pointer;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
